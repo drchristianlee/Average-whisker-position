@@ -1,0 +1,21 @@
+2:20 PM 6/30/2015
+
+Average whisker tracking workflow
+
+1. Convert whisker movies to AVI format, limit seems to be 4000 frames. Resize to 256x320 using nearest neighbor interpolation and place these files in a folder named avi. Place this folder within a folder named 1_24_14 for example with underscores. No periods in name. 
+
+2. Open first whisker movie in whisker tracker and apply default parameters if necessary. The anterior direction should be pointing down in the image. 
+
+3. Run track averge whisker position JC through whisker tracker (options dropdown, scripts, track average whisker position jc) following the prompts. This will save a results .mat file. The area where whiskers move, in texture movies, is a relatively narrow rectangle somewhat near the whisker origin. 
+
+4. From the scripts folder, open MakeMovieList_cl and run using the editor window. This will create a .mat file with the list of files for analysis. 
+
+5. Run TrackSeveralJC3 from the whisker tracker (options dropdown, scripts, trackseveraljc3). When prompted, choose to use the origin and reference line for the entire list. Choose the .mat file created in step 3. 
+
+6. Place all of the whisker tracking results files into a separate folder and run average_whisker_position on that folder. This will create a new file named anglekeeper.mat where all the angle vectors are stored. 
+
+7. Place the anglekeeper.mat file and the decision_log.mat file into a separate folder. The folder should have an identifiable name such as 1_24_14 large morning. Run whisker_average3. This will create new files containing the trials of a given response type and the other values filled in as NaNs. 
+
+8. Place the .mat files of a given response type into a folder named with the response type, thus Gos, NoGos etc. Run grand_average4 on this folder. 
+
+9. Copy all of the average keeper mat files (such as FAskeeper_average.mat) into a new folder titled average. Once the four keeper folders are there, run plot_grand_average_shaded_sem2. 

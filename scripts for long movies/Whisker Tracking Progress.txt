@@ -1,0 +1,31 @@
+Whisker Tracking Progress
+
+
+
+(Mostly) Good Tracking: (11)
+-150421 am emx 3 gc6f
+-150421 am emx 3 intrinsic 
+-150421 pm emx 1 intrinsic 
+-150421 pm emx 2 gc6f 
+-150609 am emx 4 gc6f
+-150609 am emx 5 gc6f 
+-150609 am emx 6 gc6f 
+-150609 pm emx 4 gc6f 
+-150609 pm emx 5 gc6f 
+-150609 pm emx 6 gc6f 
+-150609 emx 4 intrinsic 
+
+Generally OK, but some issues: (6)
+-150421 am emx 1 intrinsic 
+-150421 pm emx 2 gc6f 
+-150421 pm emx 1 gc6f 
+-150421 pm emx 2 intrinsic 
+-150421 pm emx 3 intrinsic
+-150609 emx 5 intrinsic
+
+Bad tracking: (4)
+-150421 am emx2 gc6f
+-150421 am emx2 intrinsic
+-150421 pm emx3 gc6f
+-150609 emx 6 intrinsic
+

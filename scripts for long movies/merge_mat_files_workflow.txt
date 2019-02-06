@@ -1,0 +1,9 @@
+merge_mat_files_workflow
+
+1. after tracking average whisker positions, move all the .mat files ONLY to a new subfolder
+
+2. Open merge_mat_files.mat and run it from the MatLab editor.
+
+3. When prompted, select the subfolder containing the Mat data files as the directory. 
+
+4. The script will merge angle data from groups of three videos. The files will be saved with the format filename_angle_data.

@@ -1,0 +1,23 @@
+average_whisker_workflow
+
+1. Convert whisker movies to AVI format. Resize to 256x320 using nearest neighbor interpolation and place in a folder named 'avi'. Make sure the folder name does not contain any periods (use underscores and dashes instead).
+
+1. Make sure each video that you plan on tracking is less than 4000 frames. If so, skip to step 4.
+
+2. If videos are longer than 4000 frames, open split_avi.m and run it from the MatLab editor. When prompted, choose the directory containing all the unedited, long AVIs. 
+
+3. The new split videos will be saved in the same folder with _1, _4001, _8001, etc appended to the filename. Select these new, split AVIs only, and move them into a new subfolder, 'split movies'.
+
+4. Open the first movie in whisker tracker and apply default parameters if necessary. The anterior direction should be pointing down in the image. 
+
+5. Run track_average_whisker_position_JC through the whisker tracker menu (options > scripts). Select the whisker origin, reference angle, and ROI when prompted. This will save a results .mat file. In texture movies, the ROI is a relatively narrow rectangle somewhat near the whisker origin.
+
+6. From the scripts folder, open MakeMovieList_cl and run from the MatLab editor. This will save a .mat file with a list of all AVIs in the folder for analysis.
+
+7. Run TrackSeveralJC3 from the whisker tracker (options > scripts). When prompted, choose to use the origin and reference line for the entire list, and choose the .mat file created in step 5.
+
+8. When TackSeveral is done running, select all the .mat files ONLY and move them into a new subfolder, 'mat data'. 
+
+9. Run merge_mat_files.m from the MatLab editor, and when prompted, select the directory containing the mat data. The data will be saved with the format 'filename_angle_data'. 
+
+Make sure you choose to run the correct merge_mat_files script, depending on how many avis each original video has been split into. merge_3mat will work for videos of 8001-12000 frames, merge_2mat will work for original videos of 4001-8000 frames. merge_nmat is more flexible, but will work only if the original videos have filenames of precisely 21 characters (not including .avi), as it decides when two files should be merged based on whether the first 21 characters match.

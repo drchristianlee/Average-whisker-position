@@ -1,0 +1,25 @@
+average_whisker_workflow
+
+All scripts can be found in Margolis Lab NAS\Margolis Lab DATA\whisker tracking test\Tracking Practice - Aseem\track average whisker position scripts
+
+1. Convert whisker movies to AVI format. Resize to 256x320 using nearest neighbor interpolation and place in a folder named 'avi'. Make sure the folder name (or that of the parent folder) does not contain any periods (use underscores and dashes instead).
+
+2. If each video you plan on tracking is less than 4001 frames, skip to step 5.
+
+3. If videos are longer than 4000 frames, open split_avi.mat and run it from the MatLab editor. When prompted, choose the directory containing all the unedited, long AVIs. 
+
+4. The new split videos will be saved in the same folder with _1, _4001, _8001, etc appended to the filename. Select these new, split AVIs only, and move them into a new subfolder, 'split movies'.
+
+5. Open the first movie in whisker tracker and apply default parameters if necessary. The anterior direction should point down in the image.
+
+6. Run track_average_whisker_position_jc through the whisker tracker menu (options > scripts). Select the whisker origin, reference angle, and ROI when prompted. This will save a results .mat file. The area where the whiskers move, in texture movies, is a relatively narrow rectangle somewhat near the whisker origin. The reference angle should be set with a vertical line. Otherwise adjust ROI to avoid light changes or any obstruction entering the frame and use the entire frame. This was done mostly for the movies of 150421 and 150609
+
+7. Open MakeMovieList_cl and run from the MatLab editor. This will save a .mat file with a list of all AVIs in the folder for analysis.
+
+8. Run TrackSeveralJC3 from the whisker tracker (options > scripts). When prompted, choose to use the origin and reference line for the entire list, and choose the mat file created in step 6.
+
+9. When TackSeveral is done running, select all the .mat files ONLY and move them into a new subfolder, 'mat data'.
+
+10. If you had originally used split_avi.m, now run merge_mat_files.m from the MatLab editor, and when prompted, select the directory containing the mat data. The data will be saved with the format 'filename_angle_data'.
+
+**Note on choosing the correct merge_mat_files script. How many files you want to merge at a time depends on how many each original video was split into, and thus on the size of the original video. merge_2mat_files will combine every two files, and should be used only if ALL original videos were between 4001-8000 frames. Similarly, merge_3mat_files should be used if ALL original videos were between 8001-12000 frames. merge_nmat_files is more flexible, and works for original videos of varying length, but ONLY if each original filename is precisely 21 characters, not including the '.avi' extension. 

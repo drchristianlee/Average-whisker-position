@@ -1,0 +1,1 @@
+These should not be run from the MatLab editor. If they do not appear in the whisker tracker under the dropdown options > scripts, move them into the scripts folder in the wt folder.

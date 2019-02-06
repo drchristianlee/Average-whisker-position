@@ -1,0 +1,9 @@
+split_avi.mat workflow
+
+1. create a folder containing the unedited (long) avi files.
+2. open the "split_avi.mat" file and run from the Matlab editor.
+3. When prompted, select as the directory the folder containing original videos.
+4. Program will generate videos with the filename format filename_1.avi, filename_4001.avi, filename_8001.avi, etc, and store them in the current folder. Expect time of 70-80s per 10,000 frame video.
+5. Select each of the NEW videos, and move them to a new subfolder
+
+see the average_whisker_workflow, and applt those instructions to the subfolder
